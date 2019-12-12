@@ -40,12 +40,14 @@ def update_recip(recip_id):
     recip = mongo.db.recip
     recip.update( {'_id': ObjectId(recip_id)},
     {
-        'recip_name':request.form.get('task_name'),
+        'recip_name':request.form.get('recip_name'),
         'category_name':request.form.get('category_name'),
-        'recip_description': request.form.get('task_description'),
+        'recip_description': request.form.get('recip_description'),
         'gluten_free':request.form.get('gluten_free')
     })
-    return redirect(url_for('get_recips'))
+    #return redirect(url_for('get_recips'))
+    return render_template("recips.html",
+                recip=mongo.db.recip.find())
 
 @app.route('/delete_recip/<recip_id>')
 def delete_recip(recip_id):
