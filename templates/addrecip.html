@@ -1,9 +1,5 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Add Recip</h3>
-<section>
-	<a href="{{ url_for('get_recips') }}">main page</a>
-    <a href="{{ url_for('get_categories') }}">categories</a>
-</section>
 <div class="row">
 	<form action="{{ url_for('insert_recip') }}" method="POST" class="col s12">
 		<div class="row">
