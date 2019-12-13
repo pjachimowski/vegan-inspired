@@ -68,7 +68,7 @@ def delete_category(category_id):
 @app.route('/edit_category/<category_id>')
 def edit_category(category_id):
     return render_template('editcategory.html',
-            category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
+    category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
 
 
 @app.route('/update_category/<category_id>', methods=['POST'])
@@ -90,6 +90,11 @@ def add_category():
     return render_template('addcategory.html')
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
+    app.run(host='0.0.0.0',
             port=(os.environ.get('PORT')),
             debug=True)
+
+#if __name__ == '__main__':
+#    app.run(host=os.environ.get('IP'),
+#            port=(os.environ.get('PORT')),
+#            debug=True)
