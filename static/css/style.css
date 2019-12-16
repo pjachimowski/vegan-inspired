@@ -1,3 +1,7 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .btn_small {
     height: 24px;
     width: 60px;
@@ -8,4 +12,24 @@
 
 .recip_header {
     margin-top: 5px;
+}
+
+/*------- navbar ---------------*/
+
+.navbar {
+    background: url("/static/css/vegan-inspired-nav.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px !important; 
+}
+
+.logo {
+    background: url("/static/css/vegan_white_2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 130px;
+    width: 220px;
+    margin: 15px;
 }

@@ -1,8 +1,4 @@
 {% extends 'base.html' %} {% block content %}
-<section>
-<a href="{{url_for('add_recips')}}" class="waves-effect waves-light btn btn_small blue">Add recips</a> | 
-<a href="{{url_for('get_categories')}}" class="waves-effect waves-light btn btn_small blue">Categories</a>
-</section>
 <div clasd="row">
 	<ul class="collapsible" data-collapsible="accordion">
 		{% for recipe in recip %}

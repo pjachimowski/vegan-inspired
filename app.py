@@ -8,7 +8,6 @@ app.config["MONGO_DBNAME"] = 'vegan_inspired'
 app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-xvp8g.mongodb.net/vegan_inspired?retryWrites=true&w=majority'
 mongo = PyMongo(app)
 
-
 @app.route('/')
 @app.route('/get_recips')
 def get_recips():
@@ -90,11 +89,11 @@ def add_category():
     return render_template('addcategory.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',
+    app.run(host='0.0.0.0',  
             port=(os.environ.get('PORT')),
             debug=True)
 
 #if __name__ == '__main__':
-#    app.run(host=os.environ.get('IP'),
+#    app.run(host='0.0.0.0',
 #            port=(os.environ.get('PORT')),
 #            debug=True)
