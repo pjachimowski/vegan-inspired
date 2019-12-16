@@ -10,6 +10,11 @@ body {
     display: block;
 }
 
+.pj-image {
+    text-align: center;
+    display: block;
+}
+
 
 .btn_small {
     height: 24px;
