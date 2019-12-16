@@ -2,6 +2,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+
+/*------- recip.html ---------------*/
+.main-title {
+    margin-top: 150px;
+    text-align: center;
+    display: block;
+}
+
+
 .btn_small {
     height: 24px;
     width: 60px;
@@ -32,4 +41,11 @@ body {
     height: 130px;
     width: 220px;
     margin: 15px;
+}
+
+
+/*------- footer ---------------*/
+
+.footer {
+    background-image: linear-gradient(to bottom right, rgb(54, 128, 52), rgb(27, 110, 66));
 }
