@@ -2,32 +2,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-
-/*------- recip.html ---------------*/
-.main-title {
-    margin-top: 150px;
-    text-align: center;
-    display: block;
-}
-
-.pj-image {
-    text-align: center;
-    display: block;
-}
-
-
-.btn_small {
-    height: 24px;
-    width: 60px;
-    line-height: 24px;
-    margin: 5px 15px 5px 5px;
-    padding: 0 0.5em;
-}
-
-.recip_header {
-    margin-top: 5px;
-}
-
 /*------- navbar ---------------*/
 
 .navbar {
@@ -36,6 +10,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 150px !important; 
+    position: relative;
+    margin-bottom: 0px;
 }
 
 .logo {
@@ -48,9 +24,69 @@ body {
     margin: 15px;
 }
 
+/*------- generic  ---------------*/
+
+.centertxt {
+    text-align: center;
+}
+
+
+/*------- recip.html ---------------*/
+.main-title {
+    margin-top: 40px;
+    display: block;
+}
+
+.pj-image {
+    display: block;
+}
+
+.blockquote {
+    font-style: italic;
+    font-family: "sans-serif";
+    color: #797979;
+    font-size: 90%;
+}
+
+.set-of-cards {
+    margin-top: 90px;
+}
+
+/*------- buttons ---------------*/
+.btn_small {
+    height: 24px;
+    width: 40px;
+    line-height: 24px;
+    margin: 5px 5px 5px 5px;
+    padding: 0 0.5em;
+    border-radius: 10px;
+}
+
+.recip_header {
+    margin-top: 5px;
+}
+
+/*-------- cards ---------------*/
+
+.card-title {
+    color: #ffffff !important;
+    text-shadow: 2px 1px #424242;
+    text-transform: uppercase;
+}
+
+.category-title {
+    color: #ffffff  !important;
+    text-shadow: 2px 1px #424242;
+    text-transform: lowercase;
+}
+
 
 /*------- footer ---------------*/
 
 .footer {
     background-image: linear-gradient(to bottom right, rgb(54, 128, 52), rgb(27, 110, 66));
+}
+
+.copyright {
+    font-size: xx-small;
 }

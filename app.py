@@ -42,7 +42,9 @@ def update_recip(recip_id):
         'recip_name':request.form.get('recip_name'),
         'category_name':request.form.get('category_name'),
         'recip_description': request.form.get('recip_description'),
-        'gluten_free':request.form.get('gluten_free')
+        'recip_image': request.form.get('recip_image'),
+        'recip_link': request.form.get('recip_link'),
+        'gluten_free':request.form.get('gluten_free'),
     })
     #return redirect(url_for('get_recips'))
     return render_template("recips.html",

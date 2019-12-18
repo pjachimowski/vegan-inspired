@@ -33,6 +33,41 @@
 				<label for="icon_telephone">Recip Description</label>
 			</div>
 		</div>
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">image</i>
+				<textarea name="recip_image" id="recip_image" class="materialize-textarea">{{recip.recip_image}}</textarea>
+				<label for="icon_telephone">paste your link here</label>
+			</div>
+		</div>
+        <div class="row">
+			<div class="col s10">
+				<ul class="collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header"><i class="material-icons">lightbulb_outline</i>How to upload
+							image</div>
+						<div class="collapsible-body">
+							<span>
+                        <ol>
+                        <li>We recomend using <a href="https://imgbb.com/">inbb</a> service.</li>
+                        <li>Create the free acount by clicking on blue button on the top-right corner of the home page</li>
+                        <li>Add picture of your meal by clinking upload button (<i class="material-icons prefix">cloud_upload</i>)</li>
+                        <li>Now use <b>Embed codes</b> drop down menu and select "Direct links"</li>
+                        <li>Copy and paste newly created link above</li>
+                        </ol>
+                        </span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">link</i>
+				<textarea name="recip_link" id="recip_link" class="materialize-textarea">{{recip.recip_link}}</textarea>
+				<label for="icon_telephone">website with recip</label>
+			</div>
+		</div>
 		<div class="row">
 			<div class="switch">
 				<label>
