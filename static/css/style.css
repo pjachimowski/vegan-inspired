@@ -62,6 +62,10 @@ body {
     border-radius: 10px;
 }
 
+.home-btn {
+    color: white !important;
+}
+
 .recip_header {
     margin-top: 5px;
 }
@@ -69,14 +73,17 @@ body {
 /*-------- cards ---------------*/
 
 .card-title {
-    color: #ffffff !important;
-    text-shadow: 2px 1px #424242;
+    color: #222222 !important;
     text-transform: uppercase;
+    font-size: small !important;
+}
+
+card-image:hover {
+    color: orange;
 }
 
 .category-title {
-    color: #ffffff  !important;
-    text-shadow: 2px 1px #424242;
+    color: #222222  !important;
     text-transform: lowercase;
 }
 
@@ -89,4 +96,10 @@ body {
 
 .copyright {
     font-size: xx-small;
+}
+
+/*---------recip editable page-------------*/
+
+.recipe.image {
+     border-radius: 50%;
 }

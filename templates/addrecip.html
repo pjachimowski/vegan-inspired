@@ -1,10 +1,14 @@
 {% extends 'base.html'%} {% block content %}
+
+<!---------------main title----------------------->
 <div>
 	<h3 class="main-title">Add Recip</h3>
 </div>
+<!--------------recip content--------------------->
 <div class="row">
 	<form action="{{ url_for('insert_recip') }}" method="POST" class="col s12">
 		<div class="row">
+        <!--------------recip category----------------------->
 			<div class="input-field col s12">
 				<i class="material-icons prefix">poll</i>
 				<select id="category" name="category_name">
@@ -16,21 +20,43 @@
 				<label>recip category</label>
 			</div>
 		</div>
+        <!--------------recip name----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">assignment</i>
-				<input id="recip_name" name="recip_name" type="text" class="validate">
+				<input id="recip_name" name="recip_name" type="text" class="validate" required
+       minlength="4" maxlength="20">
 				<label for="icon_prefix">recip name</label>
 			</div>
 		</div>
+        <!--------------recip description----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">subject</i>
-				<textarea   id="recip_description" name="recip_description" type="textarea" class="materialize-textarea"></textarea>
+				<textarea   id="recip_description" name="recip_description" type="textarea" class="materialize-textarea" required
+       minlength="20" ></textarea>
 				<label for="icon_telephone">recip description</label>
 			</div>
 		</div>
-
+        <!--------------recip ingredients----------------------->
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">kitchen</i>
+				<textarea   id="recip_ingredients" name="recip_ingredients" type="textarea" class="materialize-textarea" required
+       minlength="20" ></textarea>
+				<label for="icon_telephone">recip ingredients</label>
+			</div>
+		</div>
+        <!--------------recip method----------------------->
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">restaurant_menu</i>
+				<textarea   id="recip_method" name="recip_method" type="textarea" class="materialize-textarea" required
+       minlength="20" ></textarea>
+				<label for="icon_telephone">Method</label>
+			</div>
+		</div>
+        <!--------------recip image----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">image</i>
@@ -38,6 +64,7 @@
 				<label for="icon_telephone">paste your image link here</label>
 			</div>
 		</div>
+        <!--------------recip how to image----------------------->
 		<div class="row">
 			<div class="col s10">
 				<ul class="collapsible" data-collapsible="accordion">
@@ -59,14 +86,15 @@
 				</ul>
 			</div>
 		</div>
-
+        <!--------------recip link----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">link</i>
 				<textarea   id="recip_link" name="recip_link" type="textarea" class="materialize-textarea"></textarea>
-				<label for="icon_telephone">website with recip</label>
+				<label for="icon_telephone">add link for more inspirations</label>
 			</div>
 		</div>
+        <!--------------recip gluten free----------------------->
 		<div class="row">
 			<div class="switch col s12">
 				<label>
@@ -75,6 +103,7 @@
                     </label>
 			</div>
 		</div>
+        <!--------------recip button add----------------------->
 		<div class="row">
 			<div class="col s12">
 				<button class="btn waves-effect waves-light" type="submit" name="action">
