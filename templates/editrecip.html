@@ -1,16 +1,22 @@
 {% extends 'base.html'%} {% block content %}
-
-<h3 class="centertxt">{{recip.recip_name}}</h3>
-<div class="centertxt"><i>(editable)</i></div>
-
+<div class="row centertxt">
+	<div class="col s12 l4">
+    <img class="edit-img" src="{{recip.recip_image}}"   alt="recip image">
+	</div>
+	<div class="col s12 l7 my-auto">
+		<h2>{{recip.recip_name}}</h2>
+		<p><i>(editable)</i></p>
+	</div>
+</div><br/>
+<hr>
 
 
 <div class="row">
 	<form action="{{ url_for('update_recip', recip_id=recip._id) }}" method="POST" class="col s12">
 		<div class="row">
-        <!--------------recip category----------------------->
+			<!--------------recip category----------------------->
 			<div class="input-field col s12">
-				<i class="material-icons prefix">poll</i>
+				<i class="material-icons prefix">label_outline</i>
 				<select id="category" name="category_name">
 					<option value="" disabled selected>Choose category</option>
                     {% for cat in categories %}
@@ -24,16 +30,41 @@
 				<label>Recip Category</label>
 			</div>
 		</div>
-        <!--------------recip name----------------------->
+		<!--------------recip name----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">assignment</i>
 				<input id="recip_name" name="recip_name" type="text" class="validate" value="{{recip.recip_name}}" required
-       minlength="4" maxlength="20">
+       minlength="4" maxlength="35">
 				<label for="icon_prefix">Recip Name</label>
 			</div>
 		</div>
-        <!--------------recip description----------------------->
+		<!--------------recip short----------------------->
+		<div class="row">
+			<div class="col s10">
+				<ul class="collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header"><i class="material-icons">art_track</i>Recip Short Description
+						</div>
+						<div class="collapsible-body">
+							<span>
+                        <div class="row">
+			<div class="input-field col s12">
+
+				<textarea name="recip_short" id="recip_short" class="materialize-textarea" required
+       minlength="15" maxlength="60" >{{recip.recip_short}}</textarea>
+				<label for="icon_telephone"></label>
+			</div>
+		</div>
+
+
+                        </span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--------------recip description----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">subject</i>
@@ -42,7 +73,7 @@
 				<label for="icon_telephone">Recip Description</label>
 			</div>
 		</div>
-        <!--------------recip ingredients----------------------->
+		<!--------------recip ingredients----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">kitchen</i>
@@ -51,7 +82,7 @@
 				<label for="icon_telephone">Recip Ingredients</label>
 			</div>
 		</div>
-        <!--------------recip method----------------------->
+		<!--------------recip method----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">restaurant_menu</i>
@@ -60,15 +91,7 @@
 				<label for="icon_telephone">Method</label>
 			</div>
 		</div>
-        <!--------------recip image----------------------->
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="material-icons prefix">image</i>
-				<textarea name="recip_image" id="recip_image" class="materialize-textarea">{{recip.recip_image}}</textarea>
-				<label for="icon_telephone">paste your link here</label>
-			</div>
-		</div>
-        <!--------------recip image how to----------------------->
+		<!--------------recip image how to----------------------->
 		<div class="row">
 			<div class="col s10">
 				<ul class="collapsible" data-collapsible="accordion">
@@ -78,7 +101,7 @@
 						<div class="collapsible-body">
 							<span>
                         <ol>
-                        <li>We recomend using <a href="https://imgbb.com/">inbb</a> service.</li>
+                        <li>We recomend using <a class="more-btn"href="https://imgbb.com/" class="more-btn" target="_blank">inbb</a> service.</li>
                         <li>Create the free acount by clicking on blue button on the top-right corner of the home page</li>
                         <li>Add picture of your meal by clinking upload button (<i class="material-icons prefix">cloud_upload</i>)</li>
                         <li>Now use <b>Embed codes</b> drop down menu and select "Direct links"</li>
@@ -90,7 +113,16 @@
 				</ul>
 			</div>
 		</div>
-        <!--------------recip add link----------------------->
+		<!--------------recip image----------------------->
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">image</i>
+				<textarea name="recip_image" id="recip_image" class="materialize-textarea">{{recip.recip_image}}</textarea>
+				<label for="icon_telephone">paste your link here</label>
+			</div>
+		</div>
+
+		<!--------------recip add link----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">link</i>
@@ -98,7 +130,7 @@
 				<label for="icon_telephone">add link for more inspirations</label>
 			</div>
 		</div>
-        <!--------------recip gluten free----------------------->
+		<!--------------recip gluten free----------------------->
 		<div class="row">
 			<div class="switch">
 				<label>
@@ -112,6 +144,7 @@
                 </label>
 			</div>
 		</div>
+        <!--------------recip buttons----------------------->
 		<div class="row">
 			<button class="btn waves-effect waves-light" type="submit" name="action">Save Edit
                 <i class="material-icons right">playlist_add</i>

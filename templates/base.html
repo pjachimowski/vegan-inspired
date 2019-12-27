@@ -2,8 +2,10 @@
 <html>
 
 <head>
-
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<meta name = "viewport" content = "width = device-width, initial-scale = 1">  -->    
 
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,9 +26,9 @@
 					<li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
 				</ul>
 				<ul class="side-nav" id="mobile-demo">
-					<li><a href="{{url_for('get_recips')}}">Home</a></li>
-					<li><a href="{{url_for('add_recips')}}">New Recip</a></li>
-					<li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
+					<li><a class="card-btn" href="{{url_for('get_recips')}}">Home</a></li>
+					<li><a class="card-btn" href="{{url_for('add_recips')}}">New Recip</a></li>
+					<li><a class="card-btn" href="{{url_for('get_categories')}}">Manage Categories</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -41,7 +43,8 @@
 					<div class="col l6 s12">
 						<h5 class="white-text">Vegan Inspired</h5>
 						<p class="grey-text text-lighten-4">Thank you for sharing your delicious ideas!</p>
-					</div>
+                        <p class="brand-logo my-auto logo"></p>
+                    </div>
 					<div class="col l4 offset-l2 s12">
 						<h5 class="white-text">Stay tuned, connect with the comunity:</h5>
 						<ul>

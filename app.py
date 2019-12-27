@@ -41,6 +41,7 @@ def update_recip(recip_id):
     {
         'recip_name':request.form.get('recip_name'),
         'category_name':request.form.get('category_name'),
+        'recip_short':request.form.get('recip_short'),
         'recip_description': request.form.get('recip_description'),
         'recip_ingredients': request.form.get('recip_ingredients'),
         'recip_method': request.form.get('recip_method'),

@@ -2,6 +2,8 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+
+
 /*------- navbar ---------------*/
 
 .navbar {
@@ -30,7 +32,9 @@ body {
     text-align: center;
 }
 
-
+hr {
+    margin: 50px 0px;
+}
 /*------- recip.html ---------------*/
 .main-title {
     margin-top: 40px;
@@ -48,11 +52,25 @@ body {
     font-size: 90%;
 }
 
-.set-of-cards {
-    margin-top: 90px;
+.founder {
+    font-family: "sans-serif";
+    color: #797979;
+    font-size: 90%;
 }
 
+.set-of-cards {
+    margin-top: 20px;
+}
+
+
+
 /*------- buttons ---------------*/
+
+.add-new-bttn {
+    margin: 25px 15px;
+}
+
+
 .btn_small {
     height: 24px;
     width: 40px;
@@ -70,21 +88,32 @@ body {
     margin-top: 5px;
 }
 
+a.card-btn {
+    color: rgb(0, 0, 0) !important;
+}
+
+a.more-btn {
+    color: orange !important;
+}
+
+a {
+    color: rgb(255, 255, 255) !important;
+}
+
 /*-------- cards ---------------*/
 
 .card-title {
-    color: #222222 !important;
+    color: #ffffff !important;
     text-transform: uppercase;
-    font-size: small !important;
+    font-size: 3px;
+    text-shadow: 1px 1px #444444;
 }
 
-card-image:hover {
-    color: orange;
-}
 
 .category-title {
-    color: #222222  !important;
+    color: #ffffff  !important;
     text-transform: lowercase;
+    text-shadow: 1px 1px #444444;
 }
 
 
@@ -100,6 +129,21 @@ card-image:hover {
 
 /*---------recip editable page-------------*/
 
-.recipe.image {
-     border-radius: 50%;
+.edit-img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    margin: 35px 0px 20px 0px;
+    border-radius: 50%;
 }
+
+
+/*---------megia query -----
+@media only screen and (max-width: 600px)  {
+
+.cards-mobile {
+    display: block;
+    background-color: blue;
+}
+
+} --------*/ 

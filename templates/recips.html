@@ -2,36 +2,39 @@
 <div>
 	<h3 class="main-title centertxt"> WELCOME TO VEGAN INSPIRED</h3>
 	<div class="d-block d-sm-block pj-image centertxt">
-		<img src="/static/css/pj.png" height=100 width=100>
+		<img src="/static/css/pj.png" height=100 width=100 alt="founder">
     </div>
-		<div class="blockquote centertxt">
-			<p>"Place where I always find inspiration for my delicious vegan food"
+		<div class="centertxt">
+			<p class="blockquote">"Place where I always find inspiration for my delicious vegan food"
 			</p>
+
+			<p class="founder"> - Patryk Jachimowski, Vegan Inspired Founder</p>
 		</div>
 		<div class="centertxt">
-			<p>Our app is a collaboration for everyone who want to turn his daily menu more green, healthy and
+			<p>Our app is a collaboration for everyone who wants to turn his daily menu more green, healthy and
 				interesting. For big meat lovers it's a great chance to try new, equally satisfying dishes, for
-				vegetarian it's an eye-opener for even greener possibilities. It's a great place to scroll through many
-				already existing ideas which will influence your kitchen, make your belly happy and above all else -
+				vegetarians it's an eye-opener for even greener possibilities. It's a great place to scroll through many
+				ideas which will influence your kitchen, make your belly happy and above all else -
 				save you time and effort. Our goal is to connect people who are interested in vegan diet, build the
 				collection of recipes and get inspired by others. Join and discover new flavors.
 			</p>
 		</div>
-
+		<hr>
 		<!----------  cards ---------------------->
 		<div class="row set-of-cards">
 			{% for recipe in recip %}
-			<div class="col s4">
-				<div class="card">
+			<div class="col s12 m6 l4" height="495px">
+				<div class="card cards-mobile">
 					<div class="card-image">
-						<a href="{{url_for('edit_recip', recip_id=recipe._id)}}">
-							<img src="{{recipe.recip_image}}"></a>
-					</div>
-					<div class="card-content">
-						<span class="card-title"><b>{{recipe.recip_name}}</b>
+						<a class="card-btn" href="{{url_for('edit_recip', recip_id=recipe._id)}}">
+							<img src="{{recipe.recip_image}}" alt="founder">
+							<span class="card-title"><b>{{recipe.recip_name}}</b>
                          <small class="category-title">[{{recipe.category_name}}]</small></span>
-						<!---
-						<p>{% if "{{recipe.gluten_free}}" == "None" %}
+					</div></a>
+					<div class="card-content">
+						<div>{{recipe.recip_short}} </div>
+						<!--
+						<p>{% if "{{recipe.gluten_free}}" == "on" %}
                                 <i class="material-icons prefix green">checked</i>
                                 {% else %}
                                 <i class="material-icons prefix red">clear</i>
@@ -39,10 +42,13 @@
                         </p>
                         --->
 						<br>
+                        gluten free: {{recipe.gluten_free}}
 					</div>
 
 						<div class="card-action">
-							<a href="{{recipe.recip_link}}" target="_blank">more inspirations</a>
+							<a class="more-btn" href="{{recipe.recip_link}}" target="_blank">inspiration</a>
+                            <a href="{{url_for('edit_recip', recip_id=recipe._id)}}"
+								class="waves-effect waves-light btn btn_small"><i class="material-icons prefix">edit</i></a>
 							<a href="{{url_for('delete_recip', recip_id=recipe._id)}}"
 								class="waves-effect waves-light btn btn_small red"><i class="material-icons prefix">delete</i></a>
 						</div>
@@ -51,5 +57,13 @@
 				{% endfor %}
 			</div>
 		</div>
+		<hr>
+		<div class="centertxt add-new-bttn">
+			<a href="{{url_for('add_recips')}}">
+				<button class="btn waves-effect waves-light">Add New Recip
+                <i class="material-icons right">playlist_add</i>
+        </button></a>
+		</div>
+
 	</div>
 	{% endblock %}

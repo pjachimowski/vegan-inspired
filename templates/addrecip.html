@@ -10,7 +10,7 @@
 		<div class="row">
         <!--------------recip category----------------------->
 			<div class="input-field col s12">
-				<i class="material-icons prefix">poll</i>
+				<i class="material-icons prefix">label_outline</i>
 				<select id="category" name="category_name">
                         <option value="" disabled selected>select category</option>
                             {% for cat in categories %}
@@ -25,7 +25,7 @@
 			<div class="input-field col s12">
 				<i class="material-icons prefix">assignment</i>
 				<input id="recip_name" name="recip_name" type="text" class="validate" required
-       minlength="4" maxlength="20">
+       minlength="4" maxlength="45">
 				<label for="icon_prefix">recip name</label>
 			</div>
 		</div>
@@ -56,14 +56,6 @@
 				<label for="icon_telephone">Method</label>
 			</div>
 		</div>
-        <!--------------recip image----------------------->
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="material-icons prefix">image</i>
-				<textarea   id="recip_image" name="recip_image" type="textarea" class="materialize-textarea"></textarea>
-				<label for="icon_telephone">paste your image link here</label>
-			</div>
-		</div>
         <!--------------recip how to image----------------------->
 		<div class="row">
 			<div class="col s10">
@@ -74,7 +66,7 @@
 						<div class="collapsible-body">
 							<span>
                         <ol>
-                        <li>We recomend using <a href="https://imgbb.com/">inbb</a> service.</li>
+                        <li>We recomend using <a class="more-btn" href="https://imgbb.com/" class="more-btn" target="_blank">inbb</a> service.</li>
                         <li>Create the free acount by clicking on blue button on the top-right corner of the home page</li>
                         <li>Add picture of your meal by clinking upload button (<i class="material-icons prefix">cloud_upload</i>)</li>
                         <li>Now use <b>Embed codes</b> drop down menu and select "Direct links"</li>
@@ -86,6 +78,15 @@
 				</ul>
 			</div>
 		</div>
+        <!--------------recip image----------------------->
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">image</i>
+				<textarea   id="recip_image" name="recip_image" type="textarea" class="materialize-textarea"></textarea>
+				<label for="icon_telephone">paste your image link here</label>
+			</div>
+		</div>
+        
         <!--------------recip link----------------------->
 		<div class="row">
 			<div class="input-field col s12">
