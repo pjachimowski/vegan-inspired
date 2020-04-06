@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% block content %}
+
+<!--------------- main title ----------------------->
 <div class="row">
 	<h3 class="main-title"> Categories</h3>
+
+<!--------------categories content--------------------->
 	<div clasd="row">
 		<ul class="collapsible" data-collapsible="accordion">
 			{% for category in categories %}

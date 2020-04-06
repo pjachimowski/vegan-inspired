@@ -8,16 +8,25 @@ app.config["MONGO_DBNAME"] = 'vegan_inspired'
 app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-xvp8g.mongodb.net/vegan_inspired?retryWrites=true&w=majority'
 mongo = PyMongo(app)
 
+
+#-------------routes for recip.html -----------------------
 @app.route('/')
 @app.route('/get_recips')
 def get_recips():
     return render_template("recips.html", 
     recip=mongo.db.recip.find())
 
+@app.route('/delete_recip/<recip_id>')
+def delete_recip(recip_id):
+    mongo.db.recip.remove({'_id': ObjectId(recip_id)})
+    return redirect (url_for('get_recips'))
+
+#-------------routes for addrecip.html -----------------------
 @app.route('/add_recip')
 def add_recips():
      return render_template("addrecip.html",
                              categories=mongo.db.categories.find())
+
 
 @app.route('/insert_recip', methods=['POST'])
 def insert_recip():
@@ -26,7 +35,7 @@ def insert_recip():
     return render_template("recips.html", 
         recip=mongo.db.recip.find())
     
-
+#-------------routes for editrecip.html -----------------------
 @app.route('/edit_recip/<recip_id>')
 def edit_recip(recip_id):
     the_recip = mongo.db.recip.find_one({"_id": ObjectId(recip_id)})
@@ -49,14 +58,14 @@ def update_recip(recip_id):
         'recip_link': request.form.get('recip_link'),
         'gluten_free':request.form.get('gluten_free'),
     })
-    #return redirect(url_for('get_recips'))
     return render_template("recips.html",
                 recip=mongo.db.recip.find())
 
-@app.route('/delete_recip/<recip_id>')
-def delete_recip(recip_id):
-    mongo.db.recip.remove({'_id': ObjectId(recip_id)})
-    return redirect (url_for('get_recips'))
+#-------------routes for editcategory.html -----------------------
+@app.route('/edit_category/<category_id>')
+def edit_category(category_id):
+    return render_template('editcategory.html',
+    category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
 
 @app.route('/get_categories')
 def get_categories():
@@ -69,19 +78,13 @@ def delete_category(category_id):
     mongo.db.categories.remove({'_id': ObjectId(category_id)})
     return redirect(url_for('get_categories'))
 
-@app.route('/edit_category/<category_id>')
-def edit_category(category_id):
-    return render_template('editcategory.html',
-    category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
-
-
+#-------------routes for addcategory.html -----------------------
 @app.route('/update_category/<category_id>', methods=['POST'])
 def update_category(category_id):
     mongo.db.categories.update(
         {'_id': ObjectId(category_id)},
         {'category_name': request.form.get('category_name')})
     return redirect(url_for('get_categories'))
-
 
 @app.route('/insert_category', methods=['POST'])
 def insert_category():
@@ -93,12 +96,9 @@ def insert_category():
 def add_category():
     return render_template('addcategory.html')
 
+
+# if python runs directly it sets __name__ as __main__ and uses the parameters: 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',  
             port=(os.environ.get('PORT')),
             debug=True)
-
-#if __name__ == '__main__':
-#    app.run(host='0.0.0.0',
-#            port=(os.environ.get('PORT')),
-#            debug=True)

@@ -4,11 +4,11 @@
 <div>
 	<h3 class="main-title">Add Recip</h3>
 </div>
-<!--------------recip content--------------------->
 <div class="row">
 	<form action="{{ url_for('insert_recip') }}" method="POST" class="col s12">
 		<div class="row">
-        <!--------------recip category----------------------->
+
+<!--------------recip category form----------------------->
 			<div class="input-field col s12">
 				<i class="material-icons prefix">label_outline</i>
 				<select id="category" name="category_name">
@@ -20,7 +20,8 @@
 				<label>recip category</label>
 			</div>
 		</div>
-        <!--------------recip name----------------------->
+
+<!--------------recip name form----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">assignment</i>
@@ -29,7 +30,8 @@
 				<label for="icon_prefix">recip name</label>
 			</div>
 		</div>
-        <!--------------recip description----------------------->
+
+<!--------------recip description form----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">subject</i>
@@ -38,7 +40,8 @@
 				<label for="icon_telephone">recip description</label>
 			</div>
 		</div>
-        <!--------------recip ingredients----------------------->
+
+<!--------------recip ingredients form----------------------->
         <div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">kitchen</i>
@@ -47,7 +50,8 @@
 				<label for="icon_telephone">recip ingredients</label>
 			</div>
 		</div>
-        <!--------------recip method----------------------->
+
+<!--------------recip method form----------------------->
         <div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">restaurant_menu</i>
@@ -56,7 +60,8 @@
 				<label for="icon_telephone">Method</label>
 			</div>
 		</div>
-        <!--------------recip how to image----------------------->
+
+<!---------recip how to add image instructions drop down ------------->
 		<div class="row">
 			<div class="col s10">
 				<ul class="collapsible" data-collapsible="accordion">
@@ -78,7 +83,8 @@
 				</ul>
 			</div>
 		</div>
-        <!--------------recip image----------------------->
+
+<!--------------recip image form----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">image</i>
@@ -87,7 +93,7 @@
 			</div>
 		</div>
         
-        <!--------------recip link----------------------->
+<!--------------recip link form----------------------->
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">link</i>
@@ -95,7 +101,8 @@
 				<label for="icon_telephone">add link for more inspirations</label>
 			</div>
 		</div>
-        <!--------------recip gluten free----------------------->
+
+<!--------------recip gluten free form ----------------------->
 		<div class="row">
 			<div class="switch col s12">
 				<label>
@@ -104,7 +111,8 @@
                     </label>
 			</div>
 		</div>
-        <!--------------recip button add----------------------->
+
+<!--------------recip button add----------------------->
 		<div class="row">
 			<div class="col s12">
 				<button class="btn waves-effect waves-light" type="submit" name="action">
